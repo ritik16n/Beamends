@@ -84,24 +84,23 @@ def homepage(request,user_id):
     request.session['has_filled_range']=False
     request.session['has_filled_display']=False
     user=request.user
-    if user.is_active:
-        modeldata=DataPool(
-        series=[
-        {'options':{'source': user.link_set.all()},'terms':['total','date']}
-        ])
-        cht=Chart(
-        datasource=modeldata,series_options=
-        [{'options':{'type':'line','stacking':False},'terms':{'date':['total']}}],
-        chart_options=
-        {'title':
-        {'text':'This Month'},
-        'xAxis':{
-        'title':{'text':'months'}
-        }}
-        )
-        return render(request,'hello/userprofile/homepage.html',{'user':user,'datechart':cht,})
-    else:
-        return render(request,'hello/userprofile/error.html')
+    modeldata=DataPool(
+    series=[
+    {'options':{'source': user.link_set.all()},'terms':['total','date']}
+    ])
+    cht=Chart(
+    datasource=modeldata,series_options=
+    [{'options':{'type':'line','stacking':False},'terms':{'date':['total']}}],
+    chart_options=
+    {'title':
+    {'text':'This Month'},
+    'xAxis':{
+    'title':{'text':'months'}
+    }}
+    )
+    return render(request,'hello/userprofile/homepage.html',{'user':user,'datechart':cht,})
+#    else:
+#        return render(request,'hello/userprofile/error.html')
 
 @login_required(redirect_field_name='/hello/add', login_url='/accounts/login/')
 def add(request,user_id):
