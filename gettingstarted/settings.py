@@ -92,6 +92,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.path.join(BASE_DIR, 'postgresql'),
+        'USER':'gqndgavgisigwy',
+        'PASSWORD':'g_EnJt80K3JNvymJy0xmwWI3rZ',
     }
 }
 AUTHENTICATION_BACKENDS = (
