@@ -49,8 +49,9 @@ def register(request):
             user=User.objects.create_user(username=username,password=password,email=email)
             user.save()
             user=auth.authenticate(username=username,password=password)
-            auth.login(request,user)
-            return HttpResponseRedirect(reverse('homepage',args=(request.user.id,)))
+            if user.is_active:
+                auth.login(request,user)
+                return HttpResponseRedirect(reverse('homepage',args=(request.user.id,)))
     else:
         form=RegistrationForm()
     return render(request,'hello/registration/register.html',{'form':form,})
