@@ -77,9 +77,11 @@ def logout(request):
     auth.logout(request)
 
 def prehome(request):
-    return HttpResponseRedirect(reverse('homepage',args=(request.user.id,)))
+    user=request.user
+    return HttpResponseRedirect(reverse('homepage',args=(user.id,)))
 
-#@never_cache
+@login_required(redirect_field_name='/hello/prehome', login_url='/accounts/login/')
+@never_cache
 def homepage(request,user_id):
     request.session['has_filled_range']=False
     request.session['has_filled_display']=False
