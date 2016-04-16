@@ -50,7 +50,7 @@ def register(request):
             user.save()
             user=auth.authenticate(username=username,password=password)
             auth.login(request,user)
-            return HttpResponseRedirect(reverse(homepage,args=[request.user.id]))
+            return HttpResponseRedirect(reverse('homepage',args=(request.user.id,)))
     else:
         form=RegistrationForm()
     return render(request,'hello/registration/register.html',{'form':form,})
@@ -65,7 +65,7 @@ def login(request,redirect_field_name='/hello/prehome/'):
             user=get_object_or_404(User,username=username,password=password)
             if user is not None and user.is_active:
                 auth.login(request,user)
-                return HttpResponseRedirect('/hello/prehome')
+                return HttpResponseRedirect('/hello/prehome/')
             else:
                 return HttpResponseRedirect('/accounts/invalid')
     else:
@@ -77,9 +77,9 @@ def logout(request):
     auth.logout(request)
 
 def prehome(request):
-    return HttpResponseRedirect(reverse(homepage,args=[request.user.id]))
+    return HttpResponseRedirect(reverse('homepage',args=(request.user.id,)))
 
-@never_cache
+#@never_cache
 def homepage(request,user_id):
     request.session['has_filled_range']=False
     request.session['has_filled_display']=False
@@ -124,7 +124,7 @@ def add(request,user_id):
                     month=datetime.datetime.strptime(dt,"%Y-%m-%d").date().month
                     us.link_set.create(date=date,item=item,price=price,quantity=quantity,description=description,total=total)
                     us.save()
-                    return HttpResponseRedirect(reverse(homepage,args=[request.user.id]))
+                    return HttpResponseRedirect(reverse('homepage',args=(request.user.id,)))
             else:
                 form=Linkform()
             return render(request,'hello/userprofile/add.html',{'form':form,})
@@ -152,7 +152,7 @@ def displayform(request,user_pk):
         if request.user.is_authenticated():
             if request.session.get('has_filled_display',False):
                 request.session['has_filled_display']=False
-                return HttpResponseRedirect(reverse(homepage,args=[request.user.id]))
+                return HttpResponseRedirect(reverse('homepage',args=(request.user.id,)))
             if request.POST:
                 form=InpurDateForDisplay(request.POST)
                 if form.is_valid():
@@ -199,7 +199,7 @@ def edit(request,d_id,user_id):
         if request.user.is_authenticated():
             if request.session.get('has_filled_foredit',False):
                 request.session['has_filled_foredit']=False
-                return HttpResponseRedirect(reverse(homepage,args=[request.user.id]))
+                return HttpResponseRedirect(reverse('homepage',args=(request.user.id,)))
             if request.POST:
                 form=Linkform(request.POST)
                 if form.is_valid():
@@ -258,7 +258,7 @@ def fromandto(request,user_pk):
     if request.user.id==user.id and request.user.is_active:
         if request.session.get('has_filled_range',False):
             request.session['has_filled_range']=False
-            return HttpResponseRedirect(reverse(homepage,args=[request.user.id]))
+            return HttpResponseRedirect(reverse('homepage',args=(request.user.id,)))
         if request.user.is_authenticated():
             if request.POST:
                 form=DateRangeForm(request.POST)
