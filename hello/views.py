@@ -85,7 +85,6 @@ def homepage(request,user_id):
     request.session['has_filled_display']=False
     user=request.user
     if request.user.is_active:
-        if request.user.is_authenticated():
             modeldata=DataPool(
             series=[
             {'options':{'source': user.link_set.all()},'terms':['total','date']}
