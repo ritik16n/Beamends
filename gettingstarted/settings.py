@@ -58,7 +58,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'beamends.urls'
+ROOT_URLCONF = 'gettingstarted.urls'
 
 TEMPLATES = [
     {
@@ -82,7 +82,7 @@ TEMPLATE_LOADERS = [
 #     'django.template.loaders.eggs.Loader',
 ]
 
-WSGI_APPLICATION = 'beamends.wsgi.application'
+WSGI_APPLICATION = 'gettingstarted.wsgi.application'
 
 
 # Database
