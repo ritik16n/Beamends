@@ -138,12 +138,13 @@ def add(request,user_id):
 @login_required(redirect_field_name='/hello/log/', login_url='/accounts/login/')
 def log(request,user_pk):
     if request.user.is_authenticated():
-        user=User.objects.get(id=user_pk)
-        if request.user.is_active and request.user.id == user.id:
-            data=user.link_set.all().order_by('-date')[:10]
-            return render(request,'hello/userprofile/log.html',{'data':data,})
-        else:
-            return render(request,'hello/userprofile/error.html')
+        if request.user.is_active:
+            us=User.objects.get(id=user_pk)
+            if request.user.id == us.id:
+                data=us.link_set.all().order_by('-date')[:10]
+                return render(request,'hello/userprofile/log.html',{'data':data,})
+            else:
+                return render(request,'hello/userprofile/error.html')
     else:
         return render(request,'hello/userprofile/error.html')
 
