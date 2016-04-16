@@ -123,7 +123,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-LOGIN_REDIRECT_URL='hello/prehome/'
+LOGIN_REDIRECT_URL='/hello/prehome/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
