@@ -1,0 +1,31 @@
+{%extends 'app1/base.html'%}
+{%load staticfiles%}
+{%block background%}{%endblock%}
+{%block title%}Select Edit{%endblock%}
+{%block style%}
+<link href="{%static 'css/editpage.css'%}" rel="stylesheet"/>
+{%endblock%}
+{%block content%}
+{%if data%}
+{%for d in data%}
+<div id="editform">
+<span id="heading">Date</span><span id="text" style="margin-left:8%;">{{d.date}}</span><br><br>
+
+<span id="heading">Stuff</span><span  id="text" style="margin-left:8%;">{{d.item}}</span><br><br>
+
+<span id="heading">Description</span><span id="text" style="margin-left:5%;">{{d.description}}</span><br><br>
+
+<span id="heading">Quantity</span><span id="text" style="margin-left:6%;">{{d.quantity}}</span><br><br>
+
+<span id="heading">Price</span><span id="text" style="margin-left:8%;">{{d.price}}</span><br><br>
+
+<span id="heading"><b>Total</span><span id="text" style="margin-left:8%;">{{d.total}}</b></span><br><br>
+
+<span id="button"><div class="innerbutton"><a href="{%url 'edit' d_id=d.id user_id=user.id%}">Edit</a></div><br></span><br>
+<br><hr>
+</div>
+{%endfor%}
+{%else%}
+<P style="font-family:tahoma; margin-left:40%;margin-top:20%;">You didn't purchase anything on this day</p>
+  {%endif%}
+{%endblock%}

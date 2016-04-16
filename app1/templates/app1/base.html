@@ -1,0 +1,39 @@
+{%load staticfiles%}
+<!DOCTYPE HTML>
+<head>
+    <title>
+        {%block title%}Beamends{%endblock%}
+    </title>
+
+    <link href="{%static 'css/style.css'%}" rel="stylesheet"/>
+{%block style%}{%endblock%}
+</head>
+<body class="main">
+    <div id="navbar">
+        <ul class="wrap">
+            {%if not user.is_authenticated%}
+            <li style="float: left;"><a class="top" href="#home">Home</a></li>
+            <li style="float: left;"> <a class="top" href=""> About</a></li>
+			      <li style="float: left;"> <a class="top" href=""> Contact</a></li>
+            <li style="float: left;"> <a  class="top" href=""> Help</a></li>
+            {%else%}
+            <li class="postlogin" style="float: left;"><a class="top" href="{%url 'homepage' user.id%}">Home</a></li>
+            {%endif%}
+            {%if user.is_authenticated%}
+            <li  style="float: right;"><a class="top" href="{%url 'logout'%}">Logout</a></li>
+            {%else%}
+            <li style="float: right;"><a class="top" href="{%url 'register'%}">Sign Up</a></li>
+            <li style="float: right;"><a class="top" href="{%url 'login'%}">Login</a></li>
+            {%endif%}
+        </ul>
+        {%block background%}
+     </div>
+    <div id="headerwrap">
+			<header class="clearfix">
+                <p id="centertext">Keep track of each penny off your pocket</p>
+
+	  		</header>
+	    </div>
+      {%endblock%}
+    {%block content%}{%endblock%}
+</body>
