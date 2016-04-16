@@ -1,0 +1,12 @@
+{%extends 'hello/base.html'%}
+{%load staticfiles%}
+{%block style%}
+<link href="{%static 'css/editpage.css'%}" rel="stylesheet"/>
+{%endblock%}
+{%block title%}Deleted{%endblock%}
+{%block background%}{%endblock%}
+{%block content%}
+{%if user.is_authenticated%}
+<p>Success!</p>
+{%endif%}
+{%endblock%}

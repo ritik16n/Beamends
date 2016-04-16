@@ -1,0 +1,32 @@
+{%extends 'hello/base.html'%}
+{%load staticfiles%}
+{%block style%}
+<link href="{%static 'css/editpage.css'%}" rel="stylesheet"/>
+{%endblock%}
+{%block background%}{%endblock%}
+{%block title%}Log-{{block.super}}{%endblock%}
+{%block content%}
+{%if user.is_authenticated%}
+{%if data%}
+{%for d in data%}
+<div id="editform">
+<span id="heading">Date</span><span id="text" style="margin-left:8%;">{{d.date}}</span><br><br>
+
+<span id="heading">Stuff</span><span  id="text" style="margin-left:8%;">{{d.item}}</span><br><br>
+
+<span id="heading">Description</span><span id="text" style="margin-left:5%;">{{d.description}}</span><br><br>
+
+<span id="heading">Quantity</span><span id="text" style="margin-left:6%;">{{d.quantity}}</span><br><br>
+
+<span id="heading">Price</span><span id="text" style="margin-left:8%;">{{d.price}}</span><br><br>
+
+<span id="heading"><b>Total</span><span id="text" style="margin-left:8%;">{{d.total}}</b></span>
+
+<br><br><hr>
+</div>
+{%endfor%}
+{%else%}
+<p style="font-family:tahoma; margin-left:45%;margin-top:20%;">No recent history</p>
+{%endif%}
+{%endif%}
+{%endblock%}

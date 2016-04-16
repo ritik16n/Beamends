@@ -1,0 +1,30 @@
+{%extends 'hello/base.html'%}
+{%load staticfiles%}
+{%block background%}{%endblock%}
+{%block title%}Display-{{block.super}}{%endblock%}
+{%block style%}
+<link href="{%static 'css/editpage.css'%}" rel="stylesheet"/>
+{%endblock%}
+{%block content%}
+{%if user.is_authenticated%}
+<div id="editform">
+<span id="heading"><b>GRAND TOTAL</span><span id="text" style="margin-left:8%;">{{grand_total}}</b></span><br><br><hr><br>
+{%if data%}
+{%for d in data%}
+<span id="heading">Date</span><span id="text" style="margin-left:8%;">{{d.date}}</span><br><br>
+
+<span id="heading">Stuff</span><span  id="text" style="margin-left:8%;">{{d.item}}</span><br><br>
+
+<span id="heading">Description</span><span id="text" style="margin-left:5%;">{{d.description}}</span><br><br>
+
+<span id="heading">Quantity</span><span id="text" style="margin-left:6%;">{{d.quantity}}</span><br><br>
+
+<span id="heading">Price</span><span id="text" style="margin-left:8%;">{{d.price}}</span><br><br>
+
+<span id="heading"><b>Total</span><span id="text" style="margin-left:8%;">{{d.total}}</b></span><br><br><hr><br><br>
+{%endfor%}
+{%else%}
+<p style="font-family:tahoma; margin-left:40%;margin-top:15%;"> You didn't purchase anything on this day</p>
+{%endif%}
+{%endif%}
+{%endblock%}

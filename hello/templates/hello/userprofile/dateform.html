@@ -1,0 +1,17 @@
+{%extends 'hello/base.html'%}
+{%load staticfiles%}
+{%block title%}Enter Range{%endblock%}
+{%block style%}
+<link href="{%static 'css/displayform.css'%}" rel="stylesheet"/>{%endblock%}
+{%block background%}{%endblock%}
+{%block content%}
+<form method="post" action="{%url 'fromandto' user_pk=user.id%}">
+  {%csrf_token%}
+  <span id="heading">{{form.dt_from.label}}</span>
+  <span id = "text">{{form.dt_from}}</span><br><br>
+  <span id="heading">{{form.dt_to.label}}</span>
+  <span id = "text" style="margin-left:1.9%;">{{form.dt_to}}</span><br><br>
+<span>
+  <input type="submit" value="Display"/></span>
+</form>
+{%endblock%}

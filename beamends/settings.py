@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app1'
+    'hello'
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -62,7 +62,7 @@ ROOT_URLCONF = 'beamends.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'app1', 'templates', 'allauth'),os.path.join(BASE_DIR, 'app1', 'templates', 'app1'),],
+        'DIRS': [os.path.join(BASE_DIR, 'hello', 'templates', 'allauth'),os.path.join(BASE_DIR, 'hello', 'templates', 'hello'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'debug': True,
@@ -120,7 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-LOGIN_REDIRECT_URL='/app1/prehome/'
+LOGIN_REDIRECT_URL='/hello/prehome/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -156,13 +156,13 @@ ALLOWED_HOSTS = ['*']
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 #STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-STATIC_ROOT=os.path/join(BASE_DIR,'app1','static')
+STATIC_ROOT=os.path/join(BASE_DIR,'hello','static')
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
     #os.path.join(PROJECT_ROOT, 'static'),
-    os.path.join(BASE_DIR,'app1','static'),
+    os.path.join(BASE_DIR,'hello','static'),
 )
 
 # Simplified static file serving.

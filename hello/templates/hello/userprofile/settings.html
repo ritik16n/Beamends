@@ -1,0 +1,10 @@
+{%extends 'hello/base.html'%}
+{%block background%}{%endblock%}
+{%block title%}Account Settings{%endblock%}
+{%block content%}
+<p>Username: {{user.username}}</p>
+<p><a href="{%url 'changeuserform' user_pk=user.id%}">Change</a></p><br><hr><br>
+<p>Email address: {{user.email}}</p>
+<p><a href="{%url 'changeemailform' user_pk=user.id%}">Change</a></p><br><hr><br>
+<p><a href="{%url 'password_change'%}">Change Password</a></p><br><hr><br>
+{%endblock%}

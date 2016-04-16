@@ -1,0 +1,6 @@
+{%extends 'hello/base.html'%}
+{%block background%}{%endblock%}
+{%block title%}Logged in{%endblock%}
+{%block content%}
+<p><a href="{%url 'add' user_id=user.id%}">add</a>
+{%endblock%}

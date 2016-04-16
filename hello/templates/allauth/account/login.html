@@ -1,0 +1,38 @@
+{% extends "hello/base.html" %}
+{%load staticfiles%}
+{% load i18n %}
+{% load account socialaccount %}
+{%block style%}
+<link href="{%static 'css/loginpage.css'%}" rel="stylesheet"/>{%endblock%}
+{%block background%}{%endblock%}
+{% block content %}
+
+{% get_providers as socialaccount_providers %}
+
+
+<form class="login" method="POST" action="{% url 'account_login' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  <br>
+  <button id="signin" class="primaryAction" type="submit">{% trans "Sign In" %}</button><br><br>
+  <a id="forgot"class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a><br>
+</form>
+
+{% if socialaccount_providers %}
+
+<div class="socialaccount_ballot">
+  <ul class="socialaccount_providers">
+    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+  </ul>
+</div>
+
+{% include "socialaccount/snippets/login_extra.html" %}
+
+{% else %}
+<p>{% blocktrans %}If you have not created an account yet, then please
+  <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+  {% endif %}
+{% endblock %}

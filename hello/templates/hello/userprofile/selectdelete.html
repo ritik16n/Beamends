@@ -1,0 +1,27 @@
+{%extends 'hello/base.html'%}
+{%load staticfiles%}
+{%block background%}{%endblock%}
+{%block style%}
+<link href="{%static 'css/editpage.css'%}" rel="stylesheet"/>
+{%endblock%}
+{%block title%}Select Edit{%endblock%}
+{%block content%}
+{%for d in data%}
+<div id="editform">
+<span id="heading">Date</span><span id="text" style="margin-left:8%;">{{d.date}}</span><br><br>
+
+<span id="heading">Stuff</span><span  id="text" style="margin-left:8%;">{{d.item}}</span><br><br>
+
+<span id="heading">Description</span><span id="text" style="margin-left:5%;">{{d.description}}</span><br><br>
+
+<span id="heading">Quantity</span><span id="text" style="margin-left:6%;">{{d.quantity}}</span><br><br>
+
+<span id="heading">Price</span><span id="text" style="margin-left:8%;">{{d.price}}</span><br><br>
+
+<span id="heading"><b>Total</span><span id="text" style="margin-left:8%;">{{d.total}}</b></span><br>
+
+<span id="button"><div class="innerbutton"><a href="{%url 'delete' d_id=d.id user_id=user.id%}">Delete</a></div><br><br><br></span>
+<br><hr>
+</div>
+{%endfor%}
+{%endblock%}

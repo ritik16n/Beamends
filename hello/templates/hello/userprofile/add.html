@@ -1,0 +1,30 @@
+{%extends 'hello/base.html'%}
+{%load staticfiles%}
+{%block title%}Add-{{block.super}}{%endblock%}
+{%block style%}
+<link href="{%static 'css/addpage.css'%}" rel="stylesheet"/>
+{%endblock%}
+{%block background%}{%endblock%}
+{%block content%}
+<form action="{%url 'add' user.id%}" method="post">
+{%csrf_token%}
+{%if user.is_authenticated%}
+<div id="parent">
+<span>{{form.date.label}}</span>
+<span style="margin-left:13%;">{{form.date}}</span><br>
+<span>{{form.item.label}}</span>
+<span style="margin-left:13%;">{{form.item}}</span><br>
+<span style="margin-top:1px;position:fixed;">{{form.description.label}}</span>
+<span style="margin-left:15.8%;">{{form.description}}</span><br>
+<span>{{form.quantity.label}}</span>
+<span style="margin-left:11%;">{{form.quantity}}</span><br>
+<span>{{form.price.label}}</span>
+<span style="margin-left:13%;">{{form.price}}</span><br>
+</div>
+{%else%}
+<p>Log in first</p>{%endif%}
+<div id="inputcontainer">
+<input type="submit" value="Add"/>
+</div>
+</form>
+{%endblock%}
