@@ -5,6 +5,8 @@ admin.autodiscover()
 
 from hello import views
 
+from django.contrib.auth import views as auth_views
+
 # Examples:
 # url(r'^$', 'gettingstarted.views.home', name='home'),
 # url(r'^blog/', include('blog.urls')),
