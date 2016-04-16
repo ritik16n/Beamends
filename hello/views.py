@@ -79,7 +79,7 @@ def logout(request):
 
 def prehome(request):
     user=request.user
-    return HttpResponseRedirect(reverse('homepage',args=(user.id,)))
+    return HttpResponseRedirect(reverse('homepage',args=(request.user.id,)))
 
 #@login_required(redirect_field_name='/hello/prehome', login_url='/accounts/login/')
 @never_cache
