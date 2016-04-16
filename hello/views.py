@@ -86,9 +86,9 @@ def prehome(request):
 def homepage(request,user_id):
     request.session['has_filled_range']=False
     request.session['has_filled_display']=False
-    if request.user.is_authenticated():
-        if request.user.is_active:
-            user=request.user
+    user=User.objects.get(id=user_id)
+    if user.is_authenticated():
+        if user.is_active:
             modeldata=DataPool(
             series=[
             {'options':{'source': user.link_set.all()},'terms':['total','date']}
