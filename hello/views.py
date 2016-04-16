@@ -81,7 +81,7 @@ def prehome(request):
     user=request.user
     return HttpResponseRedirect(reverse('homepage',args=(user.id,)))
 
-@login_required(redirect_field_name='/hello/prehome', login_url='/accounts/login/')
+#@login_required(redirect_field_name='/hello/prehome', login_url='/accounts/login/')
 @never_cache
 def homepage(request,user_id):
     request.session['has_filled_range']=False
@@ -107,7 +107,7 @@ def homepage(request,user_id):
     else:
         return render(request,'hello/userprofile/error.html')
 
-@login_required(redirect_field_name='/hello/add', login_url='/accounts/login/')
+#@login_required(redirect_field_name='/hello/add', login_url='/accounts/login/')
 def add(request,user_id):
     if request.user.is_active:
         if request.user.is_authenticated():
@@ -135,7 +135,7 @@ def add(request,user_id):
         else:
             return render(request,'hello/userprofile/error.html')
 
-@login_required(redirect_field_name='/hello/log/', login_url='/accounts/login/')
+#@login_required(redirect_field_name='/hello/log/', login_url='/accounts/login/')
 def log(request,user_pk):
     if request.user.is_authenticated():
         if request.user.is_active:
