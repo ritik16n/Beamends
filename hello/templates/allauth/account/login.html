@@ -10,11 +10,11 @@
 {% get_providers as socialaccount_providers %}
 
 
-<form class="login" method="POST" action="{% url 'account_login' %}" next="/hello/homepage/{{request.user.id}}">
+<form class="login" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
   {{ form.as_p }}
   {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" next="/hello/homepage/{{request.user.id}}/>
   {% endif %}
   <br>
   <button id="signin" class="primaryAction" type="submit">{% trans "Sign In" %}</button><br><br>

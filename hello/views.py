@@ -136,7 +136,7 @@ def add(request,user_id):
             form=Linkform()
         return render(request,'hello/userprofile/add.html',{'form':form,})
     else:
-        return render(request,'hello/userprofile/error.html')
+        return HttpResponseRedirect('/accounts/login')
 
 #@login_required(redirect_field_name='/hello/log/', login_url='/accounts/login/')
 def log(request,user_pk):
