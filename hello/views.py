@@ -44,9 +44,9 @@ def register(request):
     if request.POST:
         form=RegistrationForm(request.POST)
         if form.is_valid():
-            username=form.cleaned_data['username']
-            password=form.cleaned_data['password']
-            email=form.cleaned_data['email']
+            username=request.POST['username']
+            password=request.POST['password']
+            email=request.POST['email']
             user=User.objects.create_user(username=username,password=password,email=email)
             user.save()
             user=auth.authenticate(username=username,password=password)
