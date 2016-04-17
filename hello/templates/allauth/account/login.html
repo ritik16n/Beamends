@@ -10,7 +10,7 @@
 {% get_providers as socialaccount_providers %}
 
 
-<form class="login" method="POST" action="{% url 'account_login' %}" next="/hello/prehome/">
+<form class="login" method="POST" action="{% url 'account_login' %}" next="/hello/homepage/{{request.user.id}}">
   {% csrf_token %}
   {{ form.as_p }}
   {% if redirect_field_value %}
