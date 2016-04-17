@@ -9,6 +9,7 @@
    <script src="/highcharts.js" type="text/javascript"></script>
 {%endblock%}
 {%block content%}
+{%if user.is_authenticated%}
 <div id="mainbody">
 <span id="cl-effect-10">
 <a data-hover="Add" class="buttons" href="{%url 'add' user.id%}"><span>Add</span></a><br>
@@ -25,4 +26,7 @@
    {{datechart|load_charts:"container"}}
    <span id="container"></span></span>
  </div>
+ {%else%}
+ <p style="font-family:tahoma; margin-left:45%;margin-top:20%;">Access Denied</p>
+ {%endif%}
 {%endblock%}

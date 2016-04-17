@@ -6,6 +6,7 @@
 {%endblock%}
 {%block title%}Select Edit{%endblock%}
 {%block content%}
+{%if user.is_authenticated%}
 {%for d in data%}
 <div id="editform">
 <span id="heading">Date</span><span id="text" style="margin-left:8%;">{{d.date}}</span><br><br>
@@ -24,4 +25,7 @@
 <br><hr>
 </div>
 {%endfor%}
+{%else%}
+<p style="font-family:tahoma; margin-left:45%;margin-top:20%;">You must log in first</p>
+{%endif%}
 {%endblock%}
