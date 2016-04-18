@@ -4,19 +4,28 @@
     border-radius: 2px;
     background-color: #3b5998	;
     color: white;
-    padding: 14px 25px;
-    text-align: center;
+    padding-right:  12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;;
+    text-align: left;
     text-decoration: none;
     display: inline-block;
     float:left;
     margin-left: -9.6%;
     margin-top: 2%;
     margin-right: 4%;
+    width: 18%;
+    border-radius: 2px;
+
 }
 
 
 #fb:hover, #fb:active {
     background-color: #2b3856	;
+}
+#text{
+  margin-left: 2%;
 }
 
 #google:link, #google:visited {
@@ -38,8 +47,7 @@
       background-color: #B71C1C;
   }
 
-#signin
-{
+#signin{
   font-family: tahoma;
   border-style: hidden;
   border-radius: 2px;
