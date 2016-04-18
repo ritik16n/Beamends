@@ -53,7 +53,7 @@ class ChangeEmail(forms.Form):
     newmail=forms.EmailField(label='New Email address:')
 
 class Dadsmail(forms.Form):
-    dadsmail=forms.EmailField(label="What's your dad's Email address? :")widget=forms.TextInput(attrs={'placeholder':'example@example.com'}))
+    dadsmail=forms.EmailField(label="What's your Dad's Email address? :",widget=forms.TextInput(attrs={'placeholder':'example@example.com'}))
 
 class LoginForm(forms.Form):
     username=forms.CharField(label='Username')
