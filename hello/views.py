@@ -151,7 +151,7 @@ def log(request,user_pk):
         else:
             return render(request,'hello/userprofile/error.html')
     else:
-        return HttpResponseRedirect('Login first')
+        return HttpResponseRedirect('accounts/login')
 
 def error(request):
     return render(request,'hello/userprofile/error.html')
