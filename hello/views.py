@@ -151,7 +151,7 @@ def log(request,user_pk):
         else:
             return render(request,'hello/userprofile/error.html')
     else:
-        return HttpResponseRedirect('accounts/login')
+        return HttpResponseRedirect('/accounts/login')
 
 def error(request):
     return render(request,'hello/userprofile/error.html')
@@ -179,7 +179,7 @@ def displayform(request,user_pk):
             form=InpurDateForDisplay()
         return render(request,'hello/userprofile/displayform.html',{'form':form,})
     else:
-        return HttpResponseRedirect('Login first')
+        return HttpResponseRedirect('/accounts/login')
 
 
 def editform(request,user_pk):
@@ -200,7 +200,7 @@ def editform(request,user_pk):
             form=InpurDateForDisplay()
         return render(request,'hello/userprofile/editform.html',{'form':form,})
     else:
-        return HttpResponseRedirect('Login first')
+        return HttpResponseRedirect('/accounts/login')
 
 def edit(request,d_id,user_id):
     user=User.objects.get(id=user_id)
@@ -231,7 +231,7 @@ def edit(request,d_id,user_id):
             form=Linkform(initial={'date':obj.date,'item':obj.item,'quantity':obj.quantity,'price':obj.price,'description':obj.description,})
         return render(request,'hello/userprofile/foredit.html',{'form':form,'d_id':d_id,'user_id':user_id,})
     else:
-        return HttpResponseRedirect('Login first')
+        return HttpResponseRedirect('/accounts/login')
 
 @never_cache
 def deleteform(request,user_id):
@@ -254,7 +254,7 @@ def deleteform(request,user_id):
             form=InpurDateForDisplay()
         return render(request,'hello/userprofile/deleteform.html',{'form':form,})
     else:
-        return HttpResponseRedirect('Login first')
+        return HttpResponseRedirect('/accounts/login')
 
 
 def delete(request,d_id,user_id):
@@ -289,7 +289,7 @@ def fromandto(request,user_pk):
             form=DateRangeForm()
         return render(request,'hello/userprofile/dateform.html',{'form':form,})
     else:
-        return HttpResponseRedirect('Login first')
+        return HttpResponseRedirect('/accounts/login')
 
 def settings(request,user_pk):
     user=User.objects.get(id=user_pk)
@@ -311,7 +311,7 @@ def changeuserform(request,user_pk):
             form=ChangeUsername()
         return render(request,'hello/userprofile/changeuserform.html',{'form':form,'user':user,})
     else:
-        return HttpResponseRedirect('Login first')
+        return HttpResponseRedirect('/accounts/login')
 
 def changeemailform(request,user_pk):
     user=User.objects.get(id=user_pk)
@@ -330,7 +330,7 @@ def changeemailform(request,user_pk):
             form=ChangeEmail()
         return render(request,'hello/userprofile/changeemailform.html',{'form':form,'user':user,})
     else:
-        return HttpResponseRedirect('Login first')
+        return HttpResponseRedirect('/accounts/login')
 
 def saved(request):
     if request.user.is_active:
@@ -380,4 +380,4 @@ def generatecsv(request,user_id):
             form=Dadsmail()
         return render(request,'hello/emails/sendmail.html',{'form':form,'user':user,})
     else:
-        return HttpResponseRedirect('Login first')
+        return HttpResponseRedirect('/accounts/login')
