@@ -58,7 +58,7 @@ def register(request):
     else:
         form=RegistrationForm()
     return render(request,'hello/registration/register.html',{'form':form,})
-
+"""
 def login(request,redirect_field_name='/hello/prehome/'):
     if request.POST:
         form=LoginForm(request.POST)
@@ -79,10 +79,10 @@ def login(request,redirect_field_name='/hello/prehome/'):
 def logout(request):
     request.session.flush()
     auth.logout(request)
-
+"""
 def prehome(request):
     if request.user.id is not None:
-        return HttpResponseRedirect(reverse('homepage',args=(request.user.id,)))
+        return HttpResponseRedirect(reverse('homepage',args=[request.user.id]))
     else:
         return HttpResponseRedirect('/accounts/login')
 
