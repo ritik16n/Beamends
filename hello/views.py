@@ -81,7 +81,7 @@ def logout(request):
     auth.logout(request)
 
 def prehome(request):
-    if user.id is not None:
+    if request.user.id is not None:
         return HttpResponseRedirect(reverse('homepage',args=(request.user.id,)))
     else:
         return HttpResponseRedirect('/accounts/login')
