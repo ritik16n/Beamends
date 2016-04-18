@@ -30,11 +30,11 @@ class RegistrationForm(forms.Form):
 
 
 class InpurDateForDisplay(forms.Form):
-    dt=forms.DateField(label='Enter Date',widget=forms.DateInput(format='%Y-%m-%d'))
+    dt=forms.DateField(label='Enter Date',widget=forms.DateInput(format='%Y-%m-%d',attrs={'placeholder':'yyyy-mm-dd'}))
 
 class DateRangeForm(forms.Form):
-    dt_from=forms.DateField(label='From',widget=forms.DateInput(format='%Y-%m-%d'))
-    dt_to=forms.DateField(label='To', widget=forms.DateInput(format='%y-%m-%d'))
+    dt_from=forms.DateField(label='From',widget=forms.DateInput(format='%Y-%m-%d',attrs={'placeholder':'yyyy-mm-dd'}))
+    dt_to=forms.DateField(label='To', widget=forms.DateInput(format='%y-%m-%d',attrs={'placeholder':'yyyy-mm-dd'}))
 
 
 class ChangeUsername(forms.Form):
@@ -53,7 +53,7 @@ class ChangeEmail(forms.Form):
     newmail=forms.EmailField(label='New Email address:')
 
 class Dadsmail(forms.Form):
-    dadsmail=forms.EmailField(label="What's your dad's Email address? :")
+    dadsmail=forms.EmailField(label="What's your dad's Email address? :",attrs={'placeholder':'example@example.com'})
 
 class LoginForm(forms.Form):
     username=forms.CharField(label='Username')

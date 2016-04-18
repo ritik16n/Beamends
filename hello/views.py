@@ -262,7 +262,7 @@ def delete(request,d_id,user_id):
     obj=user.link_set.get(id=d_id)
     obj.delete()
     user.save()
-    return render_to_response('hello/userprofile/done.html')
+    return render_to_response('hello/userprofile/done.html',{'user':user,})
 
 def fromandto(request,user_pk):
     user=User.objects.get(id=user_pk)
@@ -375,7 +375,7 @@ def generatecsv(request,user_id):
                 Emailmsg=EmailMessage('expenditure','body','ritiksaxena12@gmail.com',[reciever],headers={'Reply-To':'no reply'})
                 Emailmsg.attach('{}.csv'.format(objectname),csvs,'text/csv')
                 Emailmsg.send()
-                return render_to_response('hello/emails/mailsent.html',{'user':user,})
+                return render_to_response('hello/emails/mailsent.html',{'user':user,'reciever':reciever,})
         else:
             form=Dadsmail()
         return render(request,'hello/emails/sendmail.html',{'form':form,'user':user,})
