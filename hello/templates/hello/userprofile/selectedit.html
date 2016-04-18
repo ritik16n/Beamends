@@ -6,7 +6,6 @@
 <link href="{%static 'css/editpage.css'%}" rel="stylesheet"/>
 {%endblock%}
 {%block content%}
-{%if user.is_authenticated%}
 {%if data%}
 {%for d in data%}
 <div id="editform">
@@ -28,8 +27,5 @@
 {%endfor%}
 {%else%}
 <P style="font-family:tahoma; margin-left:40%;margin-top:20%;">You didn't purchase anything on this day</p>
-  {%endif%}
-  {%else%}
-  <p style="font-family:tahoma; margin-left:45%;margin-top:20%;">You must log in first</p>
   {%endif%}
 {%endblock%}

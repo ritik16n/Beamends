@@ -9,7 +9,7 @@
     text-decoration: none;
     display: inline-block;
     float:left;
-    margin-left: -2.5%;
+    margin-left: -9.6%;
     margin-top: 2%;
     margin-right: 4%;
 }
@@ -43,7 +43,7 @@
   font-family: tahoma;
   border-style: hidden;
   border-radius: 2px;
-  background-color: #27408b	;
+  background-color: #38bf4a ;
   color: white;
   padding: 10px 20px;
   text-align: center;
@@ -51,10 +51,10 @@
   display: inline-block;
   float: left;
   margin-left: .5%;
-  margin-top: -1%;
+  margin-top: -.5%;
 }
 #signin:hover{
-  background-color: #4863a0;
+  background-color: #257b30;
 }
 #forgot{
   font-family: tahoma;
@@ -62,4 +62,19 @@
   text-decoration: none;
   float: left;
   margin-left: .5%;
+}
+#fogrot:visited{
+  color:blue;
+}
+
+#size{
+    font-size: medium;
+    font-family: 'Myanmar Text';
+    margin-left: .5%;
+}
+#signininsignup{
+    text-decoration: none;
+    color:blue;
+    font-family: tahoma;
+    font-size:inherit;
 }

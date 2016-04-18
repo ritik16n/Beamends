@@ -1,0 +1,11 @@
+{%extends 'hello/base.html'%}
+{%block background%}{%endblock%}
+{%block style%}{%endblock%}
+{%block content%}
+<form action="{%url 'generatecsv' user_id=user.id%}" method="post">
+    {%csrf_token%}
+<span style="font-family: Tahoma;font-size: inherit;">{{form.dadsmail.label_tag}}<?span>
+  <span style="font-family: Tahoma;">{{form.dadsmail}}</span>
+    <input type="submit" value="Send"/>
+    </form>
+    {%endblock%}

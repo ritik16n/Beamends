@@ -20,10 +20,10 @@
             <li class="postlogin" style="float: left;"><a class="top" href="{%url 'homepage' user.id%}">Home</a></li>
             {%endif%}
             {%if user.is_authenticated%}
-            <li  style="float: right;"><a class="top" href="{%url 'logout'%}">Logout</a></li>
+            <li  style="float: right;"><a class="top" href="{%url 'account_logout'%}">Logout</a></li>
             {%else%}
-            <li style="float: right;"><a class="top" href="{%url 'register'%}">Sign Up</a></li>
-            <li style="float: right;"><a class="top" href="{%url 'login'%}">Login</a></li>
+            <li style="float: right;"><a class="top" href="{%url 'account_signup'%}">Sign Up</a></li>
+            <li style="float: right;"><a class="top" href="{%url 'account_login'%}">Login</a></li>
             {%endif%}
         </ul>
         {%block background%}

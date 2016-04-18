@@ -2,28 +2,20 @@
 {%load staticfiles%}
 {%block style%}
 <link href="{%static 'css/loginpage.css'%}" rel="stylesheet"/>{%endblock%}
+
 {% get_providers as socialaccount_providers %}
 
 {% for provider in socialaccount_providers %}
 {% if provider.id == "openid" %}
 {% for brand in provider.get_brands %}
-<div>
+<li>
   <a title="{{brand.name}}"
      class="socialaccount_provider {{provider.id}} {{brand.id}}"
      href="{% provider_login_url provider.id openid=brand.openid_url process=process %}"
      >{{brand.name}}</a>
-</div>
+</li>
 {% endfor %}
 {% endif %}
-{% if provider.id == 'google' %}
-<div>
-  <a id="google" title="{{provider.name}}" class="socialaccount_provider {{provider.id}}"
-     href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">{{provider.name}}</a>
-</div>
-{%else%}
-<div>
-  <a id="fb" title="{{provider.name}}" class="socialaccount_provider {{provider.id}}"
-     href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">{{provider.name}}</a>
-</div>
-{%endif%}
+  <a id = "fb" title="{{provider.name}}" class="socialaccount_provider {{provider.id}}"
+     href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">Sign In With Facebook</a>
 {% endfor %}
