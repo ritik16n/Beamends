@@ -12,7 +12,7 @@
     <div id="navbar">
         <ul class="wrap">
             {%if not user.is_authenticated%}
-            <li style="float: left;"><a class="top" href="{%url 'base'%}">Home</a></li>
+            <li style="float: left;"><a class="top" href="{%url 'index'%}">Home</a></li>
             <li style="float: left;"> <a class="top" href="#about">About</a></li>
 			      <li style="float: left;"> <a class="top" href="#contact">Contact</a></li>
             <li style="float: right;"><a class="top" href="{%url 'account_signup'%}">Sign Up</a></li>
