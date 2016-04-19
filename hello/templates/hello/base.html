@@ -12,22 +12,19 @@
     <div id="navbar">
         <ul class="wrap">
             {%if not user.is_authenticated%}
-            <li style="float: left;"><a class="top" href="#home">Home</a></li>
-            <li style="float: left;"> <a class="top" href=""> About</a></li>
-			      <li style="float: left;"> <a class="top" href=""> Contact</a></li>
-            <li style="float: left;"> <a  class="top" href=""> Help</a></li>
-            {%else%}
-            <li class="postlogin" style="float: left;"><a class="top" href="{%url 'homepage' user.id%}">Home</a></li>
-            {%endif%}
-            {%if user.is_authenticated%}
-            <li  style="float: right;"><a class="top" href="{%url 'account_logout'%}">Logout</a></li>
-            {%else%}
+            <li style="float: left;"><a class="top" href="{%url 'base'%}">Home</a></li>
+            <li style="float: left;"> <a class="top" href="#about">About</a></li>
+			      <li style="float: left;"> <a class="top" href="#contact">Contact</a></li>
             <li style="float: right;"><a class="top" href="{%url 'account_signup'%}">Sign Up</a></li>
             <li style="float: right;"><a class="top" href="{%url 'account_login'%}">Login</a></li>
+            {%else%}
+            <li class="postlogin" style="float: left;"><a class="top" href="{%url 'homepage' user.id%}">Home</a></li>
+            <li  style="float: right;"><a class="top" href="{%url 'account_logout'%}">Logout</a></li>
             {%endif%}
         </ul>
+        </div>
+      <div style="width: 100%;">
         {%block background%}
-     </div>
     <div id="headerwrap">
 			<header class="clearfix">
                 <p id="centertext">Keep track of each penny off your pocket</p>
@@ -35,5 +32,31 @@
 	  		</header>
 	    </div>
       {%endblock%}
-    {%block content%}{%endblock%}
+    {%block content%}
+  </div>
+  {%if not user.is_authenticated%}
+  <div id="about" style="background-color:white;margin-top:1%;font-family:myanmar text;margin-left: -8px;
+	margin-right: -8px;">
+    <div class="lines" style="margin-left:1%;"><br><i>'How much did I spent this month?'<br></div>
+    <div class="lines" style="margin-left:1%;">'What all did I buy that day while shopping?'<br></div>
+    <div class="lines" style="margin-left:1%;">'Am I spending too much these days?'<br></div>
+    <div class="lines" style="margin-left:1%;">'Time to tell dad about my expenses of this month. .Hope he doesn't freaks out!'<br><br></div></i>
+
+    <div class="lines" style="margin-left:1%;">All these tasks are just a single click away.<br></div>
+
+    <div class="lines" style="margin-left:1%;">Automate the boring traditional way of putting down your expenses on a piece of paper and summing up how much you have spent.<br></div>
+    <div class="lines" style="margin-left:1%;">Just fill in the stuff you've bought, and the rest? Its already done on the go.<br><br></div>
+  </div>
+  <div id="contact" style="background-color:white;font-family:myanmar text;;margin-top:1%;margin-left: -8px;
+	margin-right: -8px;">
+    <div class="lines" style="margin-left:1%;"><br>RITIK SAXENA<br></div>
+    <div class="lines" style="margin-left:1%;"><span>Email me at: </span><span>saxenar444@gmail.com</span></div>
+    <div class="lines" style="margin-left:1%;"><span>Contact: </span><span>+91-8098820907</span></div>
+  </div>
+  {%endif%}
+
+    <div id="bottomline">
+    <span id="bottomtext">Created and developed by: RITIK SAXENA</span>
+    </div>
+    {%endblock%}
 </body>

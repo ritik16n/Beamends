@@ -58,3 +58,23 @@
 {
     background-color: #eff1f3;
 }
+
+.lines{
+    color: #939393;
+}
+#bottomtext{
+    font-family: 'Cambria Math';
+    float: right;
+    margin-top:-1.5%;
+    margin-bottom: -1.5%;
+    margin-right:2%;
+    color: #7e7e7e;
+}
+#bottomline{
+    background-color: #363131;
+    height: 20%;
+    padding: 2px;
+    overflow: hidden;
+    margin-left: -8px;
+	margin-right: -8px;
+}
