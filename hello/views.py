@@ -39,7 +39,7 @@ def db(request):
 def index(request):
     user=request.user
     return render(request,'hello/base.html',{'user':user,})
-
+"""
 def register(request):
     if request.POST:
         form=RegistrationForm(request.POST)
@@ -58,6 +58,7 @@ def register(request):
     else:
         form=RegistrationForm()
     return render(request,'hello/registration/register.html',{'form':form,})
+"""
 """
 def login(request,redirect_field_name='/hello/prehome/'):
     if request.POST:
@@ -98,7 +99,7 @@ def homepage(request,user_id):
     if request.user.is_active:
         modeldata=DataPool(
         series=[
-        {'options':{'source': user.link_set.all()},'terms':['total','date']}
+        {'options':{'source': user.link_set.filter(date__month=datetime.datetime.today().month)},'terms':['total','date']}
         ])
         cht=Chart(
         datasource=modeldata,series_options=
