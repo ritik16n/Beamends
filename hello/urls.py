@@ -5,7 +5,7 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns=[
 
-    url(r'^register/$',views.register,name='register'),
+    #url(r'^register/$',views.register,name='register'),
 
     url(r'^add/(?P<user_id>[0-9]+)/$',views.add,name='add'),
 
