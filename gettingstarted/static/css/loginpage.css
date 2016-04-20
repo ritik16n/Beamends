@@ -12,22 +12,18 @@
     text-decoration: none;
     display: inline-block;
     float:left;
-
     margin-top: 2%;
     margin-right: 4%;
     width: 18%;
     border-radius: 2px;
 
 }
-
-
 #fb:hover, #fb:active {
     background-color: #3b59AB	;
 }
 #text{
   margin-left: 2%;
 }
-
 #google:link, #google:visited {
     font-family: Tahoma ;
     border-style: hidden;
