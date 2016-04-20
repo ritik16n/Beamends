@@ -7,6 +7,9 @@ class Linkform(forms.ModelForm):
     class Meta:
         model = Link
         exclude=('user','total','sites','permonth',)
+    def __init__(self,*args,**kwargs):
+        super(Linkform,self).__init__(*args,**kwargs)
+        self.fields['description'].widget.attrs.update({'placeholder':'optional'})
 
 class RegistrationForm(forms.Form):
     username=forms.CharField(label='User Name',max_length=15)
