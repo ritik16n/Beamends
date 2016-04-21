@@ -21,7 +21,8 @@
   <button id="signin" class="primaryAction" type="submit">{% trans "Sign In" %}</button><br><br>
   <a id="forgot" class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
 </form>
-</div>
+</div><br><br>
+<div>
 {% if socialaccount_providers %}
 
 <div class="socialaccount_ballot">
@@ -31,6 +32,7 @@
   </ul>
 
 </div>
+    </div>
 
 {% include "socialaccount/snippets/login_extra.html" %}
 
