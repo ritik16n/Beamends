@@ -12,7 +12,7 @@
     text-decoration: none;
     display: inline-block;
     float:left;
-    width: 18%;
+    width: 100px;
     border-radius: 2px;
     height: -3%;
 
@@ -37,7 +37,7 @@
     text-decoration: none;
     display: inline-block;
     float:left;
-    width: 18%;
+    width: 100px;
     height: -3%;
   }
 
@@ -114,5 +114,4 @@
     margin-left: -2%;
     margin-bottom: 2%;
     float: right;
-    margin-top: 100px;
-}
+    width: 100px;
