@@ -10,7 +10,7 @@
 
 {% get_providers as socialaccount_providers %}
 <h1 style="font-family: 'Times New Roman';margin-left: .5%;">{% trans "Sign In" %}</h1>
-
+<div>
 <form class="login" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
     <div id="size">
@@ -21,7 +21,7 @@
   <button id="signin" class="primaryAction" type="submit">{% trans "Sign In" %}</button><br><br>
   <a id="forgot" class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
 </form>
-
+</div>
 {% if socialaccount_providers %}
 
 <div class="socialaccount_ballot">
