@@ -21,12 +21,12 @@
 
 <div id = "fbb">
   <a id = "fb" title="{{provider.name}}" class="socialaccount_provider {{provider.id}}"
-     href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><div><img src="{%static 'css/fb.jpg'%}" style="widget:30px;height:30px;;margin-right:4%;float:left;" alt="fb icon"/></div><div id="text" style="margin-top:2.5%;margin-left:8px;font-family:'Tahoma';">Sign In With Facebook</div></a>
+     href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><div><img src="{%static 'css/fb.jpg'%}" style="widget:30px;height:30px;;margin-right:4%;float:left;" alt="fb icon"/></div><div id="text" style="text-align: right; margin-top:2.5%;margin-left:8px;font-family:'Tahoma';">Sign In With Facebook</div></a>
 </div>
 {%elif provider.id == 'google'%}
 <div id="gg">
    <a id = "google" title="{{provider.name}}" class="socialaccount_provider {{provider.id}}"
-        href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><div><img src="{%static 'css/g.jpg'%}" style="widget:30px;height:30px;margin-right:4%;float:left;" alt="google icon"/></div><div id="text" style="margin-top:2.5%;margin-left:8px;font-family:'roboto medium';font-size:large">Sign In With Google</div></a>
+        href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><div><img src="{%static 'css/g.jpg'%}" style="widget:30px;height:30px;margin-right:4%;float:left;" alt="google icon"/></div><div id="text" style="text-align: center; margin-top:2.5%;margin-left:8px;font-family:'roboto medium';font-size:large">Sign In With Google</div></a>
 </div>
 {%endif%}
  </div>
