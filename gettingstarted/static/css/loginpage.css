@@ -107,12 +107,19 @@
   margin-right: 2%;
   margin-bottom: 2%;
   margin-top: 4%;
-  width: 200px;
+  width: 40%;
+  display: inline-block;
 }
 
-#gg{
+#gg {
     margin-left: -2%;
     margin-bottom: 2%;
     margin-top: 4px;
     float: left;
-    width: 200px;
+    width: 40%;
+    display: inline-block;
+}
+#holdsocial{
+    margin-left: 2%;
+    margin-top: 4%;
+}
