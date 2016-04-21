@@ -103,16 +103,16 @@
 }
 #fbb{
   float:left;
-  margin-left: -1%;
+  margin-left: -2%;
   margin-bottom: 2%;
-  margin-top: 1%;
+  margin-top: -1%;
   width: 40%;
   display: block;
 }
 
 #gg {
    float:left;
-  margin-left: -1%;
+  margin-left: -2%;
   margin-bottom: 2%;
   margin-top: 1%;
   width: 40%;
