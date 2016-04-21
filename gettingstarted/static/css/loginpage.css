@@ -103,7 +103,7 @@
 }
 #fbb{
   float:left;
-  margin-left: -2%;
+  margin-left: -3%;
   margin-bottom: 2%;
   margin-top: -1%;
   width: 40%;
@@ -112,7 +112,7 @@
 
 #gg {
    float:left;
-  margin-left: -2%;
+  margin-left: -3%;
   margin-bottom: 2%;
   margin-top: -1%;
   width: 40%;
@@ -121,7 +121,7 @@
 #holdsocial{
     width: 50%;
     height: 20%;
-    margin-left: -.5%;
+    margin-left: .5%;
     margin-top: 1%;
     float: left;
 }
