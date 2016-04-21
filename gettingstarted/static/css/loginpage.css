@@ -107,16 +107,16 @@
   margin-bottom: 2%;
   margin-top: 4%;
   width: 40%;
-  display: inline;
+  display: block;
 }
 
 #gg {
-   float:right;
+   float:left;
   margin-right: 2%;
   margin-bottom: 2%;
   margin-top: 4%;
   width: 40%;
-  display: inline;
+  display: block;
 }
 #holdsocial{
     width: 50%;
