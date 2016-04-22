@@ -21,7 +21,7 @@
 
 <div id = "fbb">
   <a id = "fb" title="{{provider.name}}" class="socialaccount_provider {{provider.id}}"
-     href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><span><img src="{%static 'css/fb.jpg'%}" style="width:30px;height:30px;;margin-right:4%;float:left;" alt="fb icon"/></span><span id="text" style="margin-top:5.5%;margin-left:12px;font-family:'Tahoma';">Sign In With Facebook</span></a>
+     href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><span><img src="{%static 'css/fb.jpg'%}" style="width:30px;height:30px;;margin-right:4%;float:left;" alt="fb icon"/></span><span id="text" style="text-align: center;margin-top:7%;margin-left:12px;font-family:'Tahoma';">Sign In With Facebook</span></a>
 </div>
 {%elif provider.id == 'google'%}
 <div id="gg">
