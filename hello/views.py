@@ -108,7 +108,10 @@ def homepage(request,user_id):
         {'title':
         {'text':'This Month'},
         'xAxis':{
-        'title':{'text':'months'}
+        'title':{'text':'date'}
+        }
+        'yAxis':{
+        'title':{'text':'expenditure'}
         }}
         )
         return render(request,'hello/userprofile/homepage.html',{'user':user,'datechart':cht,})
