@@ -92,6 +92,7 @@ def prehome(request):
 def homepage(request,user_id):
     request.session['has_filled_range']=False
     request.session['has_filled_display']=False
+    request.session['is_deleted']=False
     #return HttpResponseRedirect('/accounts/login')
     user=User.objects.get(id=user_id)
     if user is None:
