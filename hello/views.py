@@ -194,8 +194,7 @@ def editform(request,user_pk):
                 date=datetime.datetime.strptime(dt,"%Y-%m-%d").date()
                 #data=get_list_or_404(user.link_set,date=date)
                 data=user.link_set.filter(date=date)
-                if data is None:
-                    return HttpResponse("You didn't buy any stuff")
+                request.session['edit']=False
                 return render(request,'hello/userprofile/selectedit.html',{'data':data,'user':user,})
         else:
             form=InpurDateForDisplay()
@@ -207,8 +206,7 @@ def edit(request,d_id,user_id):
     user=User.objects.get(id=user_id)
     obj=get_object_or_404(user.link_set,id=d_id)
     if request.user.id==user.id and request.user.is_active:
-        if request.session.get('has_filled_foredit',False):
-            request.session['has_filled_foredit']=False
+        if request.session.get('edit',False):
             return HttpResponseRedirect(reverse('homepage',args=(request.user.id,)))
         if request.POST:
             form=Linkform(request.POST)
@@ -226,7 +224,7 @@ def edit(request,d_id,user_id):
                 obj.total=price*quantity
                 obj.save()
                 user.save()
-                request.session['has_filled_foredit']=True
+                request.session['edit']=True
                 return render_to_response('hello/userprofile/done.html',{'user':user,})
         else:
             form=Linkform(initial={'date':obj.date,'item':obj.item,'quantity':obj.quantity,'price':obj.price,'description':obj.description,})
@@ -262,6 +260,8 @@ def deleteform(request,user_id):
 def delete(request,d_id,user_id):
     user=User.objects.get(id=user_id)
     obj=user.link_set.get(id=d_id)
+    if obj is None:
+        return render_to_response('hello/prehome/alreadydone.html',{'user':user,})
     obj.delete()
     user.save()
     request.session['is_deleted']=True
