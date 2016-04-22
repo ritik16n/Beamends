@@ -378,7 +378,7 @@ def generatecsv(request,user_id):
             form=Dadsmail(request.POST)
             if form.is_valid():
                 reciever=form.cleaned_data['dadsmail']
-                Emailmsg=EmailMessage('expenditure','body','ritiksaxena12@gmail.com',[reciever],headers={'Reply-To':'no reply'})
+                Emailmsg=EmailMessage('expenditure','','ritiksaxena12@gmail.com',[reciever],headers={'Reply-To':'no reply'})
                 Emailmsg.attach('{}.csv'.format(objectname),csvs,'text/csv')
                 Emailmsg.send()
                 return render_to_response('hello/emails/mailsent.html',{'user':user,'reciever':reciever,})
