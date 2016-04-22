@@ -263,6 +263,7 @@ def delete(request,d_id,user_id):
     obj=user.link_set.get(id=d_id)
     obj.delete()
     user.save()
+    request.session['is_deleted']=True
     return render_to_response('hello/userprofile/done.html',{'user':user,})
 
 def fromandto(request,user_pk):
