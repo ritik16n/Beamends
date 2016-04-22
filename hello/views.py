@@ -240,7 +240,7 @@ def deleteform(request,user_id):
             request.session['is_deleted']=False
             #form=InpurDateForDisplay()
             #return render(request,'hello/userprofile/deleteform.html',{'form':form,})
-            return HttpResponseRedirect('/hello/prrehome')
+            return HttpResponseRedirect('/hello/prehome')
         if request.POST:
             form=InpurDateForDisplay(request.POST)
             if form.is_valid():
