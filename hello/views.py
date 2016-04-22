@@ -249,6 +249,7 @@ def deleteform(request,user_id):
                 date=datetime.datetime.strptime(dt,"%Y-%m-%d").date()
                 data=user.link_set.filter(date=date)
                 request.session['is_deleted']=True
+                request.session['delete']=False
                 return render_to_response('hello/userprofile/selectdelete.html',{'data':data,'user':user,})
         else:
             form=InpurDateForDisplay()
@@ -258,13 +259,14 @@ def deleteform(request,user_id):
 
 
 def delete(request,d_id,user_id):
+    if request.session.get('delete',False):
+        return HttpResponseRedirect('/hello/prehome')
     user=User.objects.get(id=user_id)
     obj=user.link_set.get(id=d_id)
-    if obj is None:
-        return render_to_response('hello/prehome/alreadydone.html',{'user':user,})
     obj.delete()
     user.save()
     request.session['is_deleted']=True
+    request.session['delete']=True
     return render_to_response('hello/userprofile/done.html',{'user':user,})
 
 def fromandto(request,user_pk):
