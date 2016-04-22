@@ -1,0 +1,12 @@
+{%extends 'hello/base.html'%}
+{%load staticfiles%}
+{%block style%}
+<link href="{%static 'css/editpage.css'%}" rel="stylesheet"/>
+{%endblock%}
+{%block title%}Done{%endblock%}
+{%block background%}{%endblock%}
+{%block content%}
+{%if user.is_authenticated%}
+<p style="margin-left:44%;margin-top:20%;font-family:helvetica;font-size:large">Already deleted!</p>
+{%endif%}
+{%endblock%}
