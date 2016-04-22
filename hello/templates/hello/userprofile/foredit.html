@@ -4,7 +4,7 @@
 {%block style%}
 <link href="{%static 'css/addpage.css'%}" rel="stylesheet"/>
 {%endblock%}
-{%block title%}Info-{{block.super}}{%endblock%}
+{%block title%}Update-{{block.super}}{%endblock%}
 {%block content%}
 <form action="{%url 'edit' d_id=d_id user_id=user_id%}" method="post">
 {%csrf_token%}

@@ -1,6 +1,6 @@
 {%extends 'hello/base.html'%}
 {%load staticfiles%}
-{%block title%}Enter Range{%endblock%}
+{%block title%}Enter Range-{{block.super}}{%endblock%}
 {%block style%}
 <link href="{%static 'css/displayform.css'%}" rel="stylesheet"/>{%endblock%}
 {%block background%}{%endblock%}

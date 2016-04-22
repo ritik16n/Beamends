@@ -4,7 +4,7 @@
 {%block style%}
 <link href="{%static 'css/editpage.css'%}" rel="stylesheet"/>
 {%endblock%}
-{%block title%}Select Delete{%endblock%}
+{%block title%}Delete-{{block.super}}{%endblock%}
 {%block content%}
 {%if data%}
 {%for d in data%}

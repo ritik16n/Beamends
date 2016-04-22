@@ -1,7 +1,7 @@
 {%extends 'hello/base.html'%}
 {%load staticfiles%}
 {%block background%}{%endblock%}
-{%block title%}Select Edit{%endblock%}
+{%block title%}Edit-{{block.super}}{%endblock%}
 {%block style%}
 <link href="{%static 'css/editpage.css'%}" rel="stylesheet"/>
 {%endblock%}

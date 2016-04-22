@@ -1,6 +1,6 @@
 {%extends 'hello/base.html'%}
 {%load staticfiles%}
-{%block title%}Range display{%endblock%}
+{%block title%}Range display-{{block.super}}{%endblock%}
 {%block style%}
 <link href="{%static 'css/editpage.css'%}" rel="stylesheet"/>{%endblock%}
 {%block background%}{%endblock%}

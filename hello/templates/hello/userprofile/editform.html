@@ -3,7 +3,7 @@
 {%block background%}{%endblock%}
 {%block style%}
 <link href="{%static 'css/displayform.css'%}" rel="stylesheet"/>{%endblock%}
-{%block title%}Edit Form-{{block.super}}{%endblock%}
+{%block title%}Enter Date-{{block.super}}{%endblock%}
 {%block content%}
 <form method="post" action="{%url 'editform' user_pk=user.id%}">
   {%csrf_token%}

@@ -4,7 +4,7 @@
 {%block style%}
 <link href="{%static 'css/displayform.css'%}" rel="stylesheet"/>
 {%endblock%}
-{%block title%}Homepage-{{block.super}}{%endblock%}
+{%block title%}Enter Date-{{block.super}}{%endblock%}
 {%block content%}
 <form method="post" action="{%url 'deleteform' user_id=user.id%}">
   {%csrf_token%}
