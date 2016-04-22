@@ -26,7 +26,7 @@
 {%elif provider.id == 'google'%}
 <div id="gg">
    <a id = "google" title="{{provider.name}}" class="socialaccount_provider {{provider.id}}"
-        href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><div><img src="{%static 'css/g.jpg'%}" style="width:30px;height:30px;float:left;" alt="google icon"/></div><div id="text" style="text-align: center;margin-top:2.5%; font-family:'roboto medium';font-size:large">Sign In With Google</div></a>
+        href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><div><img src="{%static 'css/g.jpg'%}" style="width:30px;height:30px;float:left;" alt="google icon"/></div><div id="text" style="text-align: center;margin-top:2%;margin-right: 12px; font-family:'roboto medium';font-size:large">Sign In With Google</div></a>
 </div>
 {%endif%}
  </div>
