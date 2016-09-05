@@ -3,4 +3,4 @@ venv
 staticfiles
 .env
 db.sqlite3
-./gettingstarted/settings.py
+gettingstarted/settings.py**
